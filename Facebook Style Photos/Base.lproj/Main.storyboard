@@ -1,26 +1,114 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Facebook_Style_Photos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Za-SN-qtl">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JY7-2N-h0m">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="W65-ei-GZv" customClass="ImagesCell" customModule="Facebook_Style_Photos" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ML2-Sf-Prr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="ML2-Sf-Prr" secondAttribute="bottom" id="Cjt-en-N5e"/>
+                                            <constraint firstItem="ML2-Sf-Prr" firstAttribute="leading" secondItem="W65-ei-GZv" secondAttribute="leading" id="Gv9-dV-bvA"/>
+                                            <constraint firstAttribute="trailing" secondItem="ML2-Sf-Prr" secondAttribute="trailing" id="KGW-tn-17i"/>
+                                            <constraint firstItem="ML2-Sf-Prr" firstAttribute="top" secondItem="W65-ei-GZv" secondAttribute="top" id="oqb-SE-lKV"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="img" destination="ML2-Sf-Prr" id="elu-zq-dMl"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="5Za-SN-qtl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Hf6-dL-0JO"/>
+                            <constraint firstAttribute="trailing" secondItem="5Za-SN-qtl" secondAttribute="trailing" id="fqU-D0-DF9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5Za-SN-qtl" secondAttribute="bottom" id="kJh-Xz-62K"/>
+                            <constraint firstItem="5Za-SN-qtl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kdI-FA-lhz"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collection" destination="5Za-SN-qtl" id="4Xf-K9-LTZ"/>
+                        <segue destination="XLY-1w-KNa" kind="show" identifier="fullscreen" id="J3p-XN-pSb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-2363" y="-286"/>
+        </scene>
+        <!--Full ScreenVC-->
+        <scene sceneID="YFa-Y2-dUT">
+            <objects>
+                <viewController id="XLY-1w-KNa" customClass="FullScreenVC" customModule="Facebook_Style_Photos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iN2-MX-bvL"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tas-b9-QEl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1YY-7s-mP7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XVX-Rh-tS9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eNg-Jz-aEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1462.5" y="-286.26760563380282"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="34F-xv-dDP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P3C-qa-c4g" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bET-w5-f7X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XLY-1w-KNa" kind="relationship" relationship="rootViewController" id="Dw4-g3-8gi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sfm-iC-SvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1459" y="-1060"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="J3p-XN-pSb"/>
+    </inferredMetricsTieBreakers>
 </document>
